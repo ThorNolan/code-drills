@@ -33,6 +33,8 @@ var target;
 // assign `target` the value of "Yo-Yo" using the `nestedArray` variable
 // 
 
+target = nestedArray[1][1][2][1];
+
 
 
 
@@ -47,7 +49,7 @@ var target;
 // assign `target` the value of "Sock Monkey" using the `nestedArray` variable
 // 
 
-
+target = nestedArray[1][1][1]; 
 
 
 // This should console log out "Sock Monkey"
@@ -61,6 +63,7 @@ var target;
 // assign `target` the value of 42 using the `nestedNumberArray` variable
 // 
 
+target = nestedNumberArray[6][4][2];
 
 
 
@@ -75,7 +78,7 @@ var target;
 // assign `target` the value of "Legos" using the `nestedMixedArray` variable
 // 
 
-
+target = nestedMixedArray[1][5];
 
 
 // This should console log out "Legos"
@@ -94,7 +97,7 @@ var target;
 // assign `target` the value of "Value!" using the `nestedObject` variable
 // 
 
-
+target = nestedObject.outer.innerKey.object.key;
 
 
 // This should console log out "Value!"
@@ -109,7 +112,7 @@ var target;
 // assign `target` the value of "goal" using the `nestedMixedDataTypes` variable
 // 
 
-
+target = nestedMixedDataTypes.array[1].object;
 
 
 // This should console log out "goal"
@@ -220,9 +223,11 @@ var toyArrayOfObjects = [
 function iterateArrObjects(arrOfObj){
   // ---------- Your Code Here ----------
 
-
-
-
+   for (var i = 0; i < arrOfObj.length; i++) {
+      console.log("Count: ", arrOfObj[i].Product);
+      console.log("Item: ", arrOfObj[i].item);
+      console.log("*?*?*?*?*?*?*?*?*?*?*?*?*?*");
+   }
 
 
   // ---------- End of Code Area ----------
@@ -252,9 +257,11 @@ console.log("==================== Question 08  ====================");
 function iterateArrObjectsReverse(arrOfObj){
   // ---------- Your Code Here ----------
 
-
-
-  
+  for (var i = arrOfObj.length -1; i > -1; i--) {
+   console.log("Count: ", arrOfObj[i].Product);
+   console.log("Item: ", arrOfObj[i].item);
+   console.log("*?*?*?*?*?*?*?*?*?*?*?*?*?*");
+}
 
 
   // ---------- End of Code Area ----------

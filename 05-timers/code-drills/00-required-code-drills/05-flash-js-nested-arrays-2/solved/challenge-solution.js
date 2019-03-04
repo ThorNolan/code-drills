@@ -110,7 +110,7 @@ function toyArrToObj(arrayOfToys){
   // ---------- Your Code Here ----------
 
 	for(var i =0; i < arrayOfToys.length; i++){
-		toyArrayOfObjs.push({name: arrayOfToys[i]})
+		toyArrayOfObjs.push({name: arrayOfToys[i]});
   }
   
   // ---------- End of Code Area ----------

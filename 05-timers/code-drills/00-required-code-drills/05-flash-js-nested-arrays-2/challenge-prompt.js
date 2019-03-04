@@ -23,14 +23,17 @@ var toyArray = ["Water Balloon","Silly Putty","Paint-by-Numbers Kit",
 // }
 
 function returnCustomObject(arr){
-	var obj ={};
+   var obj ={};
   
   // ---------- Your Code Here ----------
 
-
-
-
-
+   for (var i=0; i < arr.length; i++) {
+      if (obj[arr[i]]) {
+         obj[arr[i]] += 1;
+      } else {
+         obj[arr[i]] = 1;
+      }
+   };
 
   // ---------- End of Code Area ----------
 
@@ -68,7 +71,14 @@ function greatestFrequency(toyInventory){
   
   // ---------- Your Code Here ----------
 
+   maxNum = 0;
 
+   for (item in toyInventory) {
+      if (toyInventory[item] > maxNum) {
+         maxNum = toyInventory[item];
+         maxToy = item;
+      }
+   }
 
 
 
@@ -100,9 +110,9 @@ function toyArrToObj(arrayOfToys){
 
   // ---------- Your Code Here ----------
 
-
-
-
+   for (var i=0; i < arrayOfToys.length; i++) {
+      toyArrayOfObjs.push({name: arrayOfToys[i]})
+   }
 
 
   // ---------- End of Code Area ----------
@@ -217,9 +227,20 @@ function createCustomObject(objectArr){
 
   // ---------- Your Code Here ----------
 
+   for (var i=0; i < objectArr.length; i++) {
 
+     if (customToyLineObj[objectArr[i].toyLine]) {
+        customToyLineObj[objectArr[i].toyLine].toyLineToys.push(objectArr[i].title);
+        customToyLineObj[objectArr[i].toyLine].totalToysInToyLine += objectArr[i].stock;
+     } else {
+        customToyLineObj[objectArr[i].toyLine] = {
+         toyLine: objectArr[i].toyLine,
+         toyLineToys: [objectArr[i].title],
+         totalToysInToyLine: objectArr[i].stock
+        };
+     }
 
-
+   }
 
 
   // ---------- End of Code Area ----------
@@ -261,10 +282,18 @@ console.log("==================== Question 05  ====================");
 function areDups(arr){
 
   // ---------- Your Code Here ----------
+   var numbers = {};
 
+   for (var i=0; i < arr.length; i++) {
+      if (numbers[arr[i]]) {
+         return true;
+      } else {
+         numbers[arr[i]] = true;
+      }
 
+   }
 
-
+   return false;
 
 
   // ---------- End of Code Area ----------
