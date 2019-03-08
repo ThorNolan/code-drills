@@ -8,11 +8,25 @@
 function populateButtons() {
   // Your code goes here
 
+  var buttonHello = $("<button>");
+  buttonHello.text("Hello");
+  buttonHello.attr("data", "Hello");
 
+  var buttonWorld = $("<button>");
+  buttonWorld.text("World");
+  buttonWorld.attr("data", "World");
 
+  var buttonReset = $("<button>");
+  buttonReset.text("Reset");
+  buttonReset.attr("data", "Reset");
 
+  var buttonUser = $("<button>");
+  buttonUser.text("User")
+  buttonUser.attr("id", "user-button")
+  buttonUser.attr("data", "");
 
-
+  $("#buttons-area").append(buttonHello, buttonWorld, buttonReset);
+  $("#user-button-area").append(buttonUser);
 
   // End of your code area
 }
@@ -30,11 +44,9 @@ $(function () {
   document.onkeyup = function(event) {
     // Your code goes here
 
-
-
-
-
-
+    var previousKeys = $("#user-button").attr("data");
+    previousKeys += event.key;
+    $("#user-button").attr("data", previousKeys);
 
     // End of your code area
   }
@@ -45,11 +57,18 @@ $(function () {
   $(document).on("click", "button", function (event) {
     // Your code goes here
 
-
-
-
-
-
+    switch ($(this).attr("data")) {
+      case "Hello":
+      case "World":
+        $("#output").append($(this).attr("data"));
+        break;
+      case "Reset":
+        $("#output").empty()
+        break;
+      default:
+        $("#output").text($(this).attr("data"));
+        $(this).attr("data", "")
+    }
 
     // End of your code area
   })

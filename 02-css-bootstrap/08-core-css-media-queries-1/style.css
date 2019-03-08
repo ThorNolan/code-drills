@@ -89,16 +89,70 @@ Therefore, we want our media queries in descending order, so that the most recen
     font-size: 55%;
   }
 
+  .heading-primary {
+    color: blue;
+  }
+
+  .about__box--center {
+    background-color: orangered;
+    color: white;
+    border: 5px solid purple;
+    width: 60%;
+  }
   
 }
 
 
 @media (max-width: 900px) {
 /* Set the font-size to 45% */
+html {
+  font-size: 45%;
+}
+
+.heading-primary {
+  color: purple;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) ;
+  top: 8rem;
+  padding: 5px;
+  background-color: red;
+}
+
+.btn:hover {
+  transform: translateX(-50%) translateY(-1px);
+  background-color: green;
+}
+
+.btn:active,
+.btn:focus {
+  transform: translateX(-50%) translateY(1px);
+}
+
+.about__box--center {
+  background-color: yellow;
+  color: black;
+  border: 10px solid green;
+  width: 90%;
+}
+
+.heading-sub {
+  display: block;
+}
 
 }
 
 @media (max-width: 600px) {
   /* For the colorful background, look up setting a background-image to a linear gradient in css */
+  body {
+    font-family: fantasy;
+    background-image: linear-gradient(to right bottom,red, blue);
+  }
 
+  .heading-primary {
+    color: white;
+  }
 }
