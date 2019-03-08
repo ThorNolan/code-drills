@@ -83,7 +83,7 @@
       // STEP 5. This is where we'll render our responses to the DOM. 
       
         // Because we want to render multiple responses, we will need to use a loop. 
-
+        for (var i = 0; i < response.articles.length; i++) {
         // Jquery gives us a few methods to render content to our app. .text(), .html(), .append(), .prepend(). Use whichever of these you find most appropriate in this case. Remember, our goal is to render the articles inside of the div with the class of news.
 
         // Check out the .news div for a clue as to which method we should use in this context.
