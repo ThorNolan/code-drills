@@ -10,9 +10,26 @@
 //
 // -------------------- Your Code Here --------------------
 
+// function swap(arr, idx1, idx2) {
+//   var temp = arr[idx1];
+//   arr[idx1] = arr[idx2];
+//   arr[idx2] = temp;
+// }
 
+function compare(num1, num2) {
+  var even1 = (num1 % 2 === 0);
+  var even2 = (num2 % 2 === 0);
+  if (even1 && !even2) {
+    return -1;
+  } else if (!even1 && even2) {
+    return 1;
+  } else if (even1 && even2) {
+    return (even1 - even2);
+  } else {
+    return (even2 - even1)
+  }
 
-
+}
 
 // --------------------- End Code Area --------------------
 
@@ -23,9 +40,7 @@
 function upDownSort(arr) {
   // -------------------- Your Code Here --------------------
 
-
-
-
+  return arr.sort(compare);
 
   // --------------------- End Code Area --------------------
 }

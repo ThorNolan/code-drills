@@ -37,9 +37,11 @@ $(function() {
   //
   // -------------------- Your Code Here --------------------
 
-
+  var storedButtons = localStorage.getItem("buttons");
+  if (storedButtons) {
+    buttonColors = storedButtons;
+  }
   
-
   // --------------------- End Code Area --------------------
   
 
@@ -61,9 +63,12 @@ $(function() {
     // defined above. After you've updated button colors, store it inside local storage.
     //
     // -------------------- Your Code Here --------------------
-
-
-
+    if (buttonColors[index] === "1"){
+      buttonColors = replaceChar(buttonColors, index, "0");
+    } else {
+      buttonColors = replaceChar(buttonColors, index, "1");
+    }
+    localStorage.setItem("buttons", buttonColors)
 
     // --------------------- End Code Area --------------------
 
