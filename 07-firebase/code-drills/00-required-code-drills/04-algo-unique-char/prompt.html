@@ -12,10 +12,16 @@
   <script>
     function unique(str) {
     // ====================== YOUR WORK HERE ===================
+      var compare = str.split("");
 
-
-
-
+      for (var i=0; i < str.length; i++) {
+        var temp = compare.indexOf(str[i])
+        compare.splice(temp, 1)
+        if (compare.indexOf(str[i]) > -1) {
+          return false
+        }
+      }
+      return true
 
     // =========================================================
     }

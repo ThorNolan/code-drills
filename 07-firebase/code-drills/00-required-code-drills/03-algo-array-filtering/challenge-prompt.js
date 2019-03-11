@@ -10,9 +10,14 @@
 //
 // -------------------- Your Code Here --------------------
 
-
-
-
+function checkPrime(num) {
+  for (var i = 2; i <= num/i; i++){
+    if (num % i === 0) {
+      return false
+    }
+  }
+  return true;
+}
 
 // --------------------- End Code Area --------------------
 
@@ -23,9 +28,14 @@
 function primeSort(arr) {
   // -------------------- Your Code Here --------------------
 
+  var primes = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (checkPrime(arr[i])) {
+      primes.push(arr[i]);
+    }
+  }
 
-
-
+  return primes.sort(function (num1, num2) { return num2 - num1 })
 
   // --------------------- End Code Area --------------------
 }

@@ -72,7 +72,8 @@
 
 
     // STEP 4: Based on your research of this API, assign a value to queryURL you think is appropriate to retrieve the top news stories in the US. 
-    var queryURL = "";
+    var queryURL = "https://newsapi.org/v2/top-headlines?" +
+        "country=us&" + "apiKey=7040ded2d3ae44109e892d0f65d248de";
 
 
     $.ajax({
@@ -101,13 +102,16 @@
         // The author of each article should go in the p tag with the class of author
         // The description of the article should go in the p tag with the class of desc
 
-
+        if (!response.articles[i].author) {
+          response.articles[i].author = "I wrote it!"
+        }
+        $(".appendMe").append('<div><h3 class="title">' + response.articles[i].title + '</h3> <p class="author">' + response.articles[i].author + '</p> <p class="desc">' + response.articles[i].description + '</p> <hr></div>')
 
 
       // Step 6. By now, you should have been able to render all of the articles to the news div.
       
       // You may notice that some of the articles' authors come back as null. Let's fix that. Within your loop, create a condition which checks to see if the author has value. If it doesn't, have the author instead read your own name
-      
+        }  
     });
 
 

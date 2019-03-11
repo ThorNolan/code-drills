@@ -15,8 +15,16 @@ var sentence = "It is our choices, that show what we truly are, far more than ou
 function longestWord(sen) {
     // ====================== YOUR WORK HERE ===================
 
+  var senArr = sen.split(" ");
 
+  var longestWord = "";
 
+  for (var i = 0; i < senArr.length; i++) {
+    if (senArr[i].length > longestWord.length) {
+      longestWord = senArr[i];
+    }
+  }
+  return longestWord
 
   //Bonus: Make it so that punctuation is not counted in the length of a word.
 

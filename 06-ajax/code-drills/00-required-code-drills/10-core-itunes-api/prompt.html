@@ -91,10 +91,23 @@
 
       // ===================== YOUR CODE HERE ==================
 
+      $("#itunes").on("submit", function(event) {
+        event.preventDefault()
+        var term = $("#term").val()
+        
+        $.ajax({
+        url: 'https://itunes.apple.com/search?term='+ term +'&entity=musicTrack',
+        method: "GET"
+        }).then(function (response) {
+            console.log(JSON.parse(response))
+            var res = JSON.parse(response).results
+            for (var i = 0; i < res.length; i++) {
+              $(".library").prepend('<div class="song"><img class="thumb" src="' + res[i].artworkUrl100 + '"><h2 class="song-name">' + res[i].trackName + '</h2><h4 class="song-artist">' + res[i].artistName + '</h4><audio class="song-audio" src="' + res[i].previewUrl + '"controls></audio></div>')
+            }
 
-
-
-
+            $("#term").val("")
+          });
+        });
 
       // =======================================================
     })
