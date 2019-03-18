@@ -10,14 +10,15 @@ console.log("////////////////////////////// QUESTION 5.1 \\\\\\\\\\\\\\\\\\\\\\\
 
 function missingNumber(arr){
     // =========== code starts here =============
-
+    var lengthPlus = arr.length + 1,
+    sum = 0,
+    expectedSum = lengthPlus * (lengthPlus + 1) / 2;
     
+  for (var i = 0, arrLength = arr.length; i < arrLength; i++) {
+    sum += arr[i];
+  }
 
-
-
-
-
-
+  return expectedSum - sum;
     // =========== code ends here ==============
   }
   

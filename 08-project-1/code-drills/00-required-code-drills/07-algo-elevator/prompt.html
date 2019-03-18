@@ -14,7 +14,26 @@
     var elevator = "^^^^^vv^v^vv^v^^^vvv^^^^^^v^^v^^^v^^vvv"
     
     function whichFloor(str) {
+      var floor = 0;
+      var isElevator = str;
 
+      isElevator = isElevator.replace(/v|\^/g, "")
+
+      for (var i = 0; i < str.length; i++) {
+
+        if (floor < 0) {
+          return "Uh oh!";
+        }
+
+        if (str[i] === "^") {
+          floor++;
+        } else if (str[i] === "v") {
+          floor--;
+        }
+
+      }
+
+      return floor;
     }
 
     console.log(whichFloor(elevator))
