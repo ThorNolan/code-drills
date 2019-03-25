@@ -1,0 +1,15 @@
+{
+  "name": "07-core-node-inquirer",
+  "version": "1.0.0",
+  "description": "_In this activity, we're going to be practicing more with the Inquirer package._",
+  "main": "inquirerApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  }
+}

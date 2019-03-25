@@ -1,0 +1,16 @@
+{
+  "name": "08-core-node-inquirer-and-request",
+  "version": "1.0.0",
+  "description": "_In this activity we're going to be creating a very simple app that combines inquirer prompts and request in order to make user defined API calls-",
+  "main": "cityweather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.2.2",
+    "request": "^2.88.0"
+  }
+}
