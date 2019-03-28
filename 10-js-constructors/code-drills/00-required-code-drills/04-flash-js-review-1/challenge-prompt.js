@@ -7,10 +7,11 @@ Starter Code :*/
 function oddChecker(num1, num2) {
   // code starts here
 
-
-
-
-
+  if (num1 % 2 !== 0 && num2 % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 
   // code ends here
 }
@@ -33,17 +34,16 @@ Starter Code :*/
 function power(num, exponent) {
   // code starts here
 
-
-
-
-
-
-
+  var result = 1;
+  for (i=0; i < exponent; i++) {
+    result = result * num;
+  }
+  return result;
 
   // code ends here
 }
 
-var output = exponentChecker(2, 3);
+var output = power(2, 3);
 console.log(output); // --> 8
 
 ////////////////////////////////////////////////////////////////
@@ -60,10 +60,7 @@ Starter Code :*/
 function halfsquareRoot(num) {
   // code starts here
 
-  
-
-
-
+  return Math.sqrt(num) / 2;
 
 
   // code ends here
